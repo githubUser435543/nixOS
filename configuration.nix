@@ -132,6 +132,7 @@
     gnupg
     pinentry-curses
     obsidian
+    home-manager
   ];
 
   services.pcscd.enable = true;
@@ -142,19 +143,11 @@
   };
 
 
-  # enable bash
-  programs.bash = {
-    #enable = true;
-
-    # aliases
-    shellAliases = {    
-      noc = "sudo vim /etc/nixos/configuration.nix";
-      rbs = "sudo nixos-rebuild switch";
-      ll = "ls -lah";
-      lg = "ls -lah | grep";
-  };
-
-};
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # add missing dynamic libraries for unpackaged 
+    # programs here, NOT in environment.systemPackages
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
