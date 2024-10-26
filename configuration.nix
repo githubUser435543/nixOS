@@ -118,6 +118,9 @@
   # Allow unfree 
   nixpkgs.config.allowUnfree = true;
 
+  # allow flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes"];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -129,18 +132,19 @@
     tmux
     unzip
     bash
-    gnupg
+    #gnupg
     pinentry-curses
     obsidian
     home-manager
     python3
+    fzf
   ];
 
-  services.pcscd.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-curses;
-  };
+  #services.pcscd.enable = true;
+  #programs.gnupg.agent = {
+  #  enable = true;
+  #  pinentryPackage = pkgs.pinentry-curses;
+  #};
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
