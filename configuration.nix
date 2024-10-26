@@ -130,18 +130,16 @@
     unzip
     bash
     gnupg
-    pinentry
+    pinentry-curses
     obsidian
     home-manager
   ];
 
-  #services.pcscd.enable = true;
-  #programs.gnupg.agent = {
-  #  enable = true;
-  #  pinentryPackage = pkgs.pinentry;
-  #  enableSSHSupport = false;
-  #};
-
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
