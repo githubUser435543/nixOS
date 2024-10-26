@@ -133,6 +133,7 @@
     pinentry-curses
     obsidian
     home-manager
+    python3
   ];
 
   services.pcscd.enable = true;
