@@ -139,6 +139,7 @@
     python3
     fzf
     audit
+    bat
   ];
 
   #services.pcscd.enable = true;
