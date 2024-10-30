@@ -138,6 +138,7 @@
     home-manager
     python3
     fzf
+    audit
   ];
 
   #services.pcscd.enable = true;
