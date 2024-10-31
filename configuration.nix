@@ -125,6 +125,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim 
+    wine
+    steam
     wget
     git
     neofetch
