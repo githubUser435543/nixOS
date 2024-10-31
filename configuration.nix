@@ -125,7 +125,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim 
-    wine
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
+    wineWowPackages.staging
+    winetricks
     steam
     wget
     git
@@ -142,6 +145,7 @@
     fzf
   ];
 
+  programs.steam.enable = true;
   #services.pcscd.enable = true;
   #programs.gnupg.agent = {
   #  enable = true;
